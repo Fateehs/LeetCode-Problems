@@ -12,3 +12,4 @@ C:\Users\Asus\source\repos\LeetCode Problems\LeetCode Problems\obj\Debug\net8.0\
 C:\Users\Asus\source\repos\LeetCode Problems\LeetCode Problems\obj\Debug\net8.0\LeetCode Problems.pdb
 C:\Users\Asus\source\repos\LeetCode Problems\LeetCode Problems\obj\Debug\net8.0\LeetCode Problems.genruntimeconfig.cache
 C:\Users\Asus\source\repos\LeetCode Problems\LeetCode Problems\obj\Debug\net8.0\ref\LeetCode Problems.dll
+C:\Users\Asus\source\repos\LeetCode Problems\LeetCode Problems\obj\Debug\net8.0\LeetCode Problems.sourcelink.json
