@@ -13,7 +13,7 @@ namespace LeetCode_Problems.Problems
     {
         public override void Run()
         {
-            string[] strings = ["flower", "flowlight", "flight"];
+            string[] strings = ["car", "common", "craw"];
             string result = Solve(strings);
             Console.WriteLine(result);
         }
@@ -49,11 +49,12 @@ namespace LeetCode_Problems.Problems
             StringBuilder result = new StringBuilder();
             string firstWord = strs[0];
 
+
             for (int i = 0; i < firstWord.Length; i++)
             {
                 char onMemoryChar = firstWord[i];
 
-                foreach (string str in strs)
+                foreach (var str in strs)
                 {
                     if (i >= str.Length || str[i] != onMemoryChar)
                     {
