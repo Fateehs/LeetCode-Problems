@@ -4,6 +4,7 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace LeetCode_Problems.Problems
 {
@@ -17,91 +18,55 @@ namespace LeetCode_Problems.Problems
             Console.WriteLine(result);
         }
 
-        //public bool Solve(string s)
-        //{
-        //    if (string.IsNullOrEmpty(s) || s.Length < 2) return false;
+        //Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
 
-        //    bool isPairFound = false;
+        //An input string is valid if:
 
-        //    string startOfBracket1 = "(";
-        //    string pairOfBracket1 = ")";
+        //Open brackets must be closed by the same type of brackets.
+        //Open brackets must be closed in the correct order.
+        //Every close bracket has a corresponding open bracket of the same type.
 
-        //    string startOfBracket2 = "[";
-        //    string pairOfBracket2 = "]";
 
-        //    string startOfBracket3 = "{";
-        //    string pairOfBracket3 = "}";
+        //Example 1:
 
-        //    for (int i = 0; i < s.Length - 1; i++)
-        //    {
-        //        char onMemoryChar = s[i];
-        //        char lastPairChar = s[s.Length - i - 1];
+        //Input: s = "()"
 
-        //        if (onMemoryChar == startOfBracket1[0])
-        //        {
-        //            if (s[i + 1] == pairOfBracket1[0] || lastPairChar == pairOfBracket1[0])
-        //            {
-        //                isPairFound = true;
-        //            }
-        //        }
+        //Output: true
 
-        //        if (onMemoryChar == startOfBracket2[0])
-        //        {
-        //            if (s[i + 1] == pairOfBracket2[0] || lastPairChar == pairOfBracket2[0])
-        //            {
-        //                isPairFound = true;
-        //            }
-        //        }
+        //Example 2:
 
-        //        if (onMemoryChar == startOfBracket3[0])
-        //        {
-        //            if (s[i + 1] == pairOfBracket3[0] || lastPairChar == pairOfBracket3[0])
-        //            {
-        //                isPairFound = true;
-        //            }
-        //        }
+        //Input: s = "()[]{}"
 
-        //        isPairFound = false;
-        //    }
+        //Output: true
 
-        //    if (isPairFound == false)
-        //    {
-        //        return false;
-        //    }
-        //    return true;
-        //}
+        //Example 3:
+
+        //Input: s = "(]"
+
+        //Output: false
+
+        //Example 4:
+
+        //Input: s = "([])"
+
+        //Output: true
+
+
+
+
+        //Constraints:
+
+        //1 <= s.length <= 104
+        //s consists of parentheses only '()[]{}'.
 
         public bool Solve(string s)
         {
-            Stack<char> stack = new Stack<char>();
-
-            Dictionary<char, char> pairs = new Dictionary<char, char>()
-        {
-            { ')', '(' },
-            { ']', '[' },
-            { '}', '{' }
-        };
-
-            foreach (char c in s)
+            while (s.Contains("()") || s.Contains("[]") || s.Contains("{}"))
             {
-                
-                if (pairs.ContainsKey(c))
-                {
-                    
-                    if (stack.Count == 0 || stack.Pop() != pairs[c])
-                    {
-                        return false;
-                    }
-                }
-                else
-                {
-                    
-                    stack.Push(c);
-                }
+                s = s.Replace("()", "").Replace("[]", "").Replace("{}", "");
             }
 
-            
-            return stack.Count == 0;
+            return s.Length == 0;
         }
     }
 }
